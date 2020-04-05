@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Etch-a-Sketch Project</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+</head>
+
+<body>
+  <div id="container">
+   
+  </div>
+    
+<script>
+const container = document.getElementById("container");
+
+function makeRows(rows, cols) { 
+    container.style.setProperty('--grid-rows', rows);
+    container.style.setProperty('--grid-cols', cols);
+    for (c = 0; c < (rows * cols); c++) {
+    let cell = document.createElement("div");
+    container.appendChild(cell).id = "grid-item";
+  };
+};
+makeRows(20, 20);     
+
+ function func()
+{  
+    item.setAttribute("style", "background-color:black;")
+}
+var item = document.getElementById("grid-item");
+item.addEventListener("mouseover", func, false);       
+    
+</script>
+    
+</body>
+</html>
