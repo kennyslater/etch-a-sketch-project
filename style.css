@@ -12,13 +12,8 @@
     grid-template-columns: repeat(var(--grid-cols), auto);
 }
 
-#grid-item {
+.grid-item {
     padding: auto;
     border: 1px solid #ddd;
     text-align: center;
 }
-
-grid-item:hover{
-    background-color: black;
-}
-

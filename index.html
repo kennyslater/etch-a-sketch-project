@@ -20,19 +20,44 @@ function makeRows(rows, cols) {
     container.style.setProperty('--grid-cols', cols);
     for (c = 0; c < (rows * cols); c++) {
     let cell = document.createElement("div");
-    container.appendChild(cell).id = "grid-item";
+    container.appendChild(cell).className = "grid-item";
   };
 };
-makeRows(20, 20);     
-
- function func()
-{  
-    item.setAttribute("style", "background-color:black;")
-}
-var item = document.getElementById("grid-item");
-item.addEventListener("mouseover", func, false);       
+makeRows(50, 50); 
+    
+let mouseTarget = document.querySelectorAll('div.grid-item');
+mouseTarget.forEach(box=>{    
+box.addEventListener('mouseover', function (e){
+e.target.style.backgroundColor="black";   
+})
+});
     
 </script>
     
 </body>
 </html>
+
+<!--- 
+ function func()
+{  
+    item.setAttribute("style", "background-color:black;")
+
+var item = document.querySelector(".grid-item");
+    function func()
+{  
+    item.setAttribute("style", "background-color:black;")
+}
+
+item.addEventListener  
+}
+
+item.addEventListener("mouseover", func, false);    
+
+let boxes=document.querySelectorAll("div.grid-item");
+boxes.forEach(square=>{
+square.addEventListener('mouseover',function(e){
+e.target.style.backgroundColor="black";
+})
+}) ;
+
+--->
