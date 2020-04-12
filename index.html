@@ -8,29 +8,91 @@
 </head>
 
 <body>
-  <div id="container">
-   
-  </div>
+    <di class ="buttons">
+        <button id = "reset">Reset Grid</button>
+        <button id = "red">Red</button>
+        <button id = "blue">Blue</button>
+        <button id = "black">Black</button>
+        <button id = "random">Random</button>  
+    </di>
+    
+    <div id="container">
+    </div>
     
 <script>
 const container = document.getElementById("container");
+let n = 16; 
+let colour = "black";  
+let MAX = 100;
+let MIN = 3; 
+     
+// Colour the grid red
+let red = document.querySelector('#red');
+    red.addEventListener('click', function(){
+    colour = "red";    
+    });
+// Colour the grid blue
+let blue = document.querySelector('#blue');
+    blue.addEventListener('click', function(){
+    colour = "blue";    
+    });
+// Colour the grid black
+let black = document.querySelector('#black');
+    black.addEventListener('click', function(){
+    colour = "black";    
+    });   
+// Colour the grid with random colours
+document.querySelector('#random');
+    random.addEventListener('click', function(){
+    colour =  getRandomColour();
+    })
 
-function makeRows(rows, cols) { 
-    container.style.setProperty('--grid-rows', rows);
-    container.style.setProperty('--grid-cols', cols);
-    for (c = 0; c < (rows * cols); c++) {
+function getRandomColour() {
+    var letters = '0123456789ABCDEF';
+    var ranColour = '#';
+    for (var i = 0; i < 6; i++) {
+      ranColour += letters[Math.floor(Math.random() * 16)];
+    }
+    return ranColour;
+  }
+  
+
+// Create grid    
+function makeRows(rows, cols) {
+    
+// Grid must be of a certain size    
+    while (n < MIN || n > MAX || isNaN(n)){  
+    n = prompt ("Number must be equal to or larger than 4 and less than or equal to 100");    
+    }    
+    container.style.setProperty('--grid-rows', n);
+    container.style.setProperty('--grid-cols', n);
+    for (c = 0; c < (n * n); c++) {
     let cell = document.createElement("div");
+
+// Highlight grid cells on mouseover    
+    cell.onmouseover = function(){
+        cell.style.background = (colour);
+    }    
     container.appendChild(cell).className = "grid-item";
   };
-};
-makeRows(50, 50); 
-    
-let mouseTarget = document.querySelectorAll('div.grid-item');
-mouseTarget.forEach(box=>{    
-box.addEventListener('mouseover', function (e){
-e.target.style.backgroundColor="black";   
-})
-});
+};      
+
+// function to clear the grid
+    function clear(){
+    container.innerHTML = '';
+    makeRows(n);
+          // If they do not input a canvas size the default is 16
+};    
+
+makeRows(n, n);  
+
+// Code to reset the grid and prompt user for new grid size    
+let reset = document.querySelector('#reset'); 
+reset.addEventListener('click', function(e){
+n=prompt("Enter Grid Size");  
+clear();
+ 
+})   
     
 </script>
     
@@ -59,5 +121,18 @@ square.addEventListener('mouseover',function(e){
 e.target.style.backgroundColor="black";
 })
 }) ;
+
+let mouseTarget = document.querySelectorAll('div.grid-item');
+mouseTarget.forEach(box=>{    
+box.addEventListener('mouseover', function (e){
+e.target.style.backgroundColor="black";   
+})
+});
+
+
+let random = document.querySelector("#random");
+    random.addEventListener('click', function(){
+    colour = ""    
+    })
 
 --->
