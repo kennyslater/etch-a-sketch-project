@@ -22,7 +22,7 @@
     display: inline-block;
     display: flex;
     justify-content: center;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 .header{
     display: inline-block;
@@ -30,7 +30,7 @@
     justify-content: center;
     font-family: cursive;
     font-size: 50px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     
 }
 
@@ -38,9 +38,18 @@
     display: inline-block;
     display: flex;
     justify-content: center;
-    padding-top: 10px;
+    padding-top: 5px;
+    font-family: cursive;
 }
 
 .btn{
     margin: 5px;
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+}
+.btn:hover{
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 5px 5px 0 rgba(0,0,0,0.19);
 }
