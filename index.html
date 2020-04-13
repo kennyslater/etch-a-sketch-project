@@ -18,12 +18,11 @@
         <button id = "random" class="btn">Random</button>  
     </div>
     <div id="container"></div>    
-    <div class="footer">Made by KennySlater</div>
+    <div class="footer"><a href="https://github.com/kennyslater">Made by KennySlater</a></div>
     
 <script>
 const container = document.getElementById("container");
 let n = 16; 
-let colour = "black";  
 let MAX = 100;
 let MIN = 3;   
 
@@ -101,72 +100,3 @@ clear();
     
 </body>
 </html>
-
-<!--- 
- function func()
-{  
-    item.setAttribute("style", "background-color:black;")
-
-var item = document.querySelector(".grid-item");
-    function func()
-{  
-    item.setAttribute("style", "background-color:black;")
-}
-
-item.addEventListener  
-}
-
-item.addEventListener("mouseover", func, false);    
-
-let boxes=document.querySelectorAll("div.grid-item");
-boxes.forEach(square=>{
-square.addEventListener('mouseover',function(e){
-e.target.style.backgroundColor="black";
-})
-}) ;
-
-let mouseTarget = document.querySelectorAll('div.grid-item');
-mouseTarget.forEach(box=>{    
-box.addEventListener('mouseover', function (e){
-e.target.style.backgroundColor="black";   
-})
-});
-
-
-let random = document.querySelector("#random");
-    random.addEventListener('click', function(){
-    colour = ""    
-    })
-// Colour the grid red
-let red = document.querySelector('#red');
-    red.addEventListener('click', function(){
-    colour = "red";    
-    });
-// Colour the grid blue
-let blue = document.querySelector('#blue');
-    blue.addEventListener('click', function(){
-    colour = "blue";    
-    });
-// Colour the grid black
-let black = document.querySelector('#black');
-    black.addEventListener('click', function(){
-    colour = "black";    
-    });   
-// Colour the grid with random colours
-
-function getRandomColour() {
-    var letters = '0123456789ABCDEF';
-    var ranColour = '#';
-    for (var i = 0; i < 6; i++) {
-    ranColour += letters[Math.floor(Math.random() * 16)];
-    }
-    return randomColor;
-  }
-
-var red = document.getElementById('red');
-var blue = document.getElementById('blue');
-var black = document.getElementById('black');
-var random = document.getElementById('random');
-
-
---->

@@ -3,6 +3,10 @@
     --grid-rows: 1;
 }
 
+.a{
+    color: black;
+}
+
 #container {
     margin: 0 auto;
     width: 600px;
@@ -31,6 +35,7 @@
     font-family: cursive;
     font-size: 50px;
     padding-bottom: 5px;
+    padding-top: 20px;
     
 }
 
@@ -38,7 +43,7 @@
     display: inline-block;
     display: flex;
     justify-content: center;
-    padding-top: 5px;
+    padding-top: 7px;
     font-family: cursive;
 }
 
