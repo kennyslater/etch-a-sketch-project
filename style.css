@@ -5,14 +5,14 @@
 
 #container {
     margin: 0 auto;
-    width: 700px;
-    height: 700px;
+    width: 600px;
+    height: 600px;
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), auto);
     grid-template-columns: repeat(var(--grid-cols), auto);
 }
 
-.grid-item {
+.boxes {
     padding: auto;
     border: 1px solid #ddd;
     text-align: center;
@@ -22,6 +22,25 @@
     display: inline-block;
     display: flex;
     justify-content: center;
+    padding-bottom: 10px;
+}
+.header{
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    font-family: cursive;
+    font-size: 50px;
+    padding-bottom: 10px;
     
-    
+}
+
+.footer{
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.btn{
+    margin: 5px;
 }
