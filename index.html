@@ -42,7 +42,7 @@ function makeRows(rows, cols) {
     
 // Grid must be of a certain size    
 while (n < MIN || n > MAX || isNaN(n)){  
-    n = prompt ("Number must be equal to or larger than 4 and less than or equal to 100");    
+    n = prompt ("Must be a number from 4 to 100");    
     }    
     container.style.setProperty('--grid-rows', n);
     container.style.setProperty('--grid-cols', n);
