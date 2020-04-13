@@ -5,14 +5,14 @@
 
 #container {
     margin: 0 auto;
-    width: 700px;
-    height: 700px;
+    width: 600px;
+    height: 600px;
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), auto);
     grid-template-columns: repeat(var(--grid-cols), auto);
 }
 
-.grid-item {
+.boxes {
     padding: auto;
     border: 1px solid #ddd;
     text-align: center;
@@ -22,6 +22,34 @@
     display: inline-block;
     display: flex;
     justify-content: center;
+    padding-bottom: 5px;
+}
+.header{
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    font-family: cursive;
+    font-size: 50px;
+    padding-bottom: 5px;
     
-    
+}
+
+.footer{
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    font-family: cursive;
+}
+
+.btn{
+    margin: 5px;
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 15px;
+    transition-duration: 0.4s;
+}
+.btn:hover{
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 5px 5px 0 rgba(0,0,0,0.19);
 }

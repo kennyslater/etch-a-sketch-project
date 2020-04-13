@@ -1,87 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Etch-a-Sketch Project</title>
+    <title>Etch A Sketch Project</title>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
 </head>
 
 <body>
-    <di class ="buttons">
-        <button id = "reset">Reset Grid</button>
-        <button id = "red">Red</button>
-        <button id = "blue">Blue</button>
-        <button id = "black">Black</button>
-        <button id = "random">Random</button>  
-    </di>
+    <div class = "header">Etch A Sketch</div>
     
-    <div id="container">
+    <div class ="buttons">
+        <button id = "reset" class="btn">Reset Grid</button>
+        <button id = "red" class="btn">Red</button>
+        <button id = "blue" class='btn'>Blue</button>
+        <button id = "black" class="btn">Black</button>
+        <button id = "random" class="btn">Random</button>  
     </div>
+    <div id="container"></div>    
+    <div class="footer">Made by KennySlater</div>
     
 <script>
 const container = document.getElementById("container");
 let n = 16; 
 let colour = "black";  
 let MAX = 100;
-let MIN = 3; 
-     
-// Colour the grid red
-let red = document.querySelector('#red');
-    red.addEventListener('click', function(){
-    colour = "red";    
-    });
-// Colour the grid blue
-let blue = document.querySelector('#blue');
-    blue.addEventListener('click', function(){
-    colour = "blue";    
-    });
-// Colour the grid black
-let black = document.querySelector('#black');
-    black.addEventListener('click', function(){
-    colour = "black";    
-    });   
-// Colour the grid with random colours
-document.querySelector('#random');
-    random.addEventListener('click', function(){
-    colour =  getRandomColour();
-    })
+let MIN = 3;   
 
+// Random colour generator    
 function getRandomColour() {
     var letters = '0123456789ABCDEF';
     var ranColour = '#';
     for (var i = 0; i < 6; i++) {
-      ranColour += letters[Math.floor(Math.random() * 16)];
+    ranColour += letters[Math.floor(Math.random() * 16)];
     }
     return ranColour;
-  }
-  
-
+  }    
+     
 // Create grid    
 function makeRows(rows, cols) {
     
 // Grid must be of a certain size    
-    while (n < MIN || n > MAX || isNaN(n)){  
+while (n < MIN || n > MAX || isNaN(n)){  
     n = prompt ("Number must be equal to or larger than 4 and less than or equal to 100");    
     }    
     container.style.setProperty('--grid-rows', n);
     container.style.setProperty('--grid-cols', n);
     for (c = 0; c < (n * n); c++) {
     let cell = document.createElement("div");
-
-// Highlight grid cells on mouseover    
-    cell.onmouseover = function(){
-        cell.style.background = (colour);
-    }    
-    container.appendChild(cell).className = "grid-item";
+    container.appendChild(cell).className = "boxes";
+        
+//Highlight cells with background colour 
+    // Colour the grid black
+let black = document.querySelector('#black');
+    black.addEventListener('click', function(){
+     cell.onmouseover = function(){
+        cell.style.backgroundColor = "black";
+    }   
+    });   
+    // Colour the grid red
+let red = document.querySelector('#red');
+    red.addEventListener('click', function(){
+     cell.onmouseover = function(){
+        cell.style.backgroundColor = "red";
+    }   
+    });    
+    // Colour the grid blue
+let blue = document.querySelector('#blue');
+    blue.addEventListener('click', function(){
+     cell.onmouseover = function(){
+        cell.style.backgroundColor = "blue";
+    }   
+    });
+    // Colour the grid with random colours
+let random = document.querySelector('#random');
+    random.addEventListener('click', function(){
+     cell.onmouseover = function(){
+        cell.style.background = getRandomColour();
+    }   
+    });                  
   };
-};      
+}; 
 
 // function to clear the grid
-    function clear(){
+function clear(){
     container.innerHTML = '';
     makeRows(n);
-          // If they do not input a canvas size the default is 16
 };    
 
 makeRows(n, n);  
@@ -91,8 +95,7 @@ let reset = document.querySelector('#reset');
 reset.addEventListener('click', function(e){
 n=prompt("Enter Grid Size");  
 clear();
- 
-})   
+})     
     
 </script>
     
@@ -134,5 +137,36 @@ let random = document.querySelector("#random");
     random.addEventListener('click', function(){
     colour = ""    
     })
+// Colour the grid red
+let red = document.querySelector('#red');
+    red.addEventListener('click', function(){
+    colour = "red";    
+    });
+// Colour the grid blue
+let blue = document.querySelector('#blue');
+    blue.addEventListener('click', function(){
+    colour = "blue";    
+    });
+// Colour the grid black
+let black = document.querySelector('#black');
+    black.addEventListener('click', function(){
+    colour = "black";    
+    });   
+// Colour the grid with random colours
+
+function getRandomColour() {
+    var letters = '0123456789ABCDEF';
+    var ranColour = '#';
+    for (var i = 0; i < 6; i++) {
+    ranColour += letters[Math.floor(Math.random() * 16)];
+    }
+    return randomColor;
+  }
+
+var red = document.getElementById('red');
+var blue = document.getElementById('blue');
+var black = document.getElementById('black');
+var random = document.getElementById('random');
+
 
 --->
